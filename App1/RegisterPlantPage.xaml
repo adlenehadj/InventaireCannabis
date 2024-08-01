@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.RegisterPlantPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20">
+                <Label x:Name="plantCountLabel" FontAttributes="Bold" FontSize="Large" TextColor="Black" Margin="0,10,0,10"/>
+                <Entry x:Name="txtIdentification" Placeholder="Identification" />
+                <Picker x:Name="cmbEtatSante" Title="État de Santé">
+                    <Picker.Items>
+                        <x:String>Rouge</x:String>
+                        <x:String>Orange</x:String>
+                        <x:String>Jaune</x:String>
+                        <x:String>Vert</x:String>
+                    </Picker.Items>
+                </Picker>
+                <DatePicker x:Name="dpDateArrivee" />
+                <Entry x:Name="txtProvenance" Placeholder="Provenance" />
+                <Entry x:Name="txtDescription" Placeholder="Description" />
+                <Picker x:Name="cmbStade" Title="Stade">
+                    <Picker.Items>
+                        <x:String>Initiation</x:String>
+                        <x:String>Microdissection</x:String>
+                        <x:String>Magenta</x:String>
+                        <x:String>Double magenta</x:String>
+                        <x:String>Hydroponie</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Picker x:Name="cmbEntreposage" Title="Entreposage">
+                    <Picker.Items>
+                        <x:String>B3200</x:String>
+                        <x:String>B3080.01</x:String>
+                        <x:String>B3070</x:String>
+                        <x:String>F1260.01</x:String>
+                        <x:String>F1260.04</x:String>
+                        <x:String>B3320</x:String>
+                    </Picker.Items>
+                </Picker>
+                <DatePicker x:Name="dpDateRetrait" />
+                <Picker x:Name="cmbRaisonRetrait" Title="Raison de Retrait">
+                    <Picker.Items>
+                        <x:String>DESTRUCTION PAR AUTOCLAVE</x:String>
+                        <x:String>TRANSFERT CLIENT</x:String>
+                        <x:String>TRANSFERT AUTRE CENTRE</x:String>
+                        <x:String>AUTRE (INDIQUER LA RAISON DANS NOTE)</x:String>
+                        <x:String>TRANSFERT POUR ANALYSE</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Picker x:Name="cmbResponsable" Title="Responsable Décontamination">
+                    <Picker.Items>
+                        <x:String>Kadija Houssein Youssouf</x:String>
+                        <x:String>Alexandre Tromas</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Entry x:Name="txtNote" Placeholder="Note" />
+                <Button Text="Enregistrer" Clicked="OnSaveButtonClicked" BackgroundColor="#4CAF50" TextColor="White" />
+                <Button Text="Scanner un QR code" Clicked="OnScanQrCodeClicked" />
+                <ListView x:Name="listViewPlantules" ItemsSource="{Binding Plantules}" Margin="0,20,0,0" ItemTapped="OnItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding Identification}" FontAttributes="Bold" />
+                                    <Label Text="{Binding EtatSante}" />
+                                    <Label Text="{Binding DateArrivee, StringFormat='d'}" />
+                                    <Label Text="{Binding Provenance}" />
+                                    <Label Text="{Binding Description}" />
+                                    <Label Text="{Binding Stade}" />
+                                    <Label Text="{Binding Entreposage}" />
+                                    <Label Text="{Binding Actif}" />
+                                    <Label Text="{Binding DateRetrait, StringFormat='d'}" />
+                                    <Label Text="{Binding RaisonRetrait}" />
+                                    <Label Text="{Binding Responsable}" />
+                                    <Label Text="{Binding Note}" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.PlantuleDetailsPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label Text="Identification" FontAttributes="Bold" />
+            <Label Text="{Binding Identification}" />
+
+            <Label Text="État de Santé" FontAttributes="Bold" />
+            <Label Text="{Binding EtatSante}" />
+
+            <Label Text="Date d'Arrivée" FontAttributes="Bold" />
+            <Label Text="{Binding DateArrivee}" />
+
+            <Label Text="Provenance" FontAttributes="Bold" />
+            <Label Text="{Binding Provenance}" />
+
+            <Label Text="Description" FontAttributes="Bold" />
+            <Label Text="{Binding Description}" />
+
+            <Label Text="Stade" FontAttributes="Bold" />
+            <Label Text="{Binding Stade}" />
+
+            <Label Text="Entreposage" FontAttributes="Bold" />
+            <Label Text="{Binding Entreposage}" />
+
+            <Label Text="Actif" FontAttributes="Bold" />
+            <Label Text="{Binding Actif}" />
+
+            <Label Text="Date de Retrait" FontAttributes="Bold" />
+            <Label Text="{Binding DateRetrait}" />
+
+            <Label Text="Raison de Retrait" FontAttributes="Bold" />
+            <Label Text="{Binding RaisonRetrait}" />
+
+            <Label Text="Responsable" FontAttributes="Bold" />
+            <Label Text="{Binding Responsable}" />
+
+            <Label Text="Note" FontAttributes="Bold" />
+            <Label Text="{Binding Note}" />
+
+            <Button Text="Modifier" Clicked="OnEditButtonClicked" />
+            <Button Text="Supprimer" Clicked="OnDeleteButtonClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

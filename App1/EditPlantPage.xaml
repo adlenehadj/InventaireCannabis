@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.EditPlantPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20">
+                <Entry x:Name="txtIdentification" Placeholder="Identification" IsEnabled="False" />
+                <Picker x:Name="cmbEtatSante" Title="État de Santé">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Rouge</x:String>
+                            <x:String>Orange</x:String>
+                            <x:String>Jaune</x:String>
+                            <x:String>Vert</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <DatePicker x:Name="dpDateArrivee"  />
+                <Entry x:Name="txtProvenance" Placeholder="Provenance" />
+                <Entry x:Name="txtDescription" Placeholder="Description" />
+                <Picker x:Name="cmbStade" Title="Stade">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Initiation</x:String>
+                            <x:String>Microdissection</x:String>
+                            <x:String>Magenta</x:String>
+                            <x:String>Double magenta</x:String>
+                            <x:String>Hydroponie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker x:Name="cmbEntreposage" Title="Entreposage">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>B3200</x:String>
+                            <x:String>B3080.01</x:String>
+                            <x:String>B3070</x:String>
+                            <x:String>F1260.01</x:String>
+                            <x:String>F1260.04</x:String>
+                            <x:String>B3320</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <DatePicker x:Name="dpDateRetrait"  />
+                <Picker x:Name="cmbRaisonRetrait" Title="Raison de Retrait">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>DESTRUCTION PAR AUTOCLAVE</x:String>
+                            <x:String>TRANSFERT CLIENT</x:String>
+                            <x:String>TRANSFERT AUTRE CENTRE</x:String>
+                            <x:String>AUTRE (INDIQUER LA RAISON DANS NOTE)</x:String>
+                            <x:String>TRANSFERT POUR ANALYSE</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker x:Name="cmbResponsable" Title="Responsable Décontamination">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Kadija Houssein Youssouf</x:String>
+                            <x:String>Alexandre Tromas</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Entry x:Name="txtNote" Placeholder="Note" />
+                <Button Text="Enregistrer les modifications" Clicked="OnSaveButtonClicked" BackgroundColor="#4CAF50" TextColor="White" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
